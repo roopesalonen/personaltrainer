@@ -21,11 +21,11 @@ export default function TrainingList() {
             data._embedded.trainings.map(async (training) => {
                 if (training._links.customer) {
                     const responseCustomer = await fetch(training._links.customer.href);
-                    const dataCustomer = await responseCustomer.json();
+                    const customerData = await responseCustomer.json();
                     return {
                         ...training,
                         id: training._links.self.href.split('/').pop(),
-                        customerName: `${dataCustomer.firstname} ${dataCustomer.lastname}`,
+                        customerName: `${customerData.firstname} ${customerData.lastname}`,
                     };
                 }
             })
@@ -68,6 +68,7 @@ export default function TrainingList() {
                     columnDefs={columnDefs}
                     pagination={true}
                     paginationAutoPageSize={true}
+                    enableCellTextSelection={true}
                     suppressCellFocus={true}
                 />
             </div>

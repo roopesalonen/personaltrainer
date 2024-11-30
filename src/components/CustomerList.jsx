@@ -6,6 +6,7 @@ import "ag-grid-community/styles/ag-theme-material.css";
 import AddCustomer from './AddCustomer'
 import EditCustomer from './EditCustomer'
 import AddTraining from './AddTraining'
+import CSV from './CSV'
 
 export default function CustomerList() {
     const [customers, setCustomers] = useState([]);
@@ -106,9 +107,15 @@ export default function CustomerList() {
                     columnDefs={columnDefs}
                     pagination={true}
                     paginationAutoPageSize={true}
+                    enableCellTextSelection={true}
                     suppressCellFocus={true}
                 />
             </div>
+            <Stack direction="row" justifyContent="center">
+                <Button variant="outlined" size="small">
+                    <CSV customers={customers} />
+                </Button>
+            </Stack>
             <Snackbar
                 open={snackbarAdd}
                 autoHideDuration={2500}
