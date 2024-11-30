@@ -107,7 +107,6 @@ export default function CustomerList() {
                     columnDefs={columnDefs}
                     pagination={true}
                     paginationAutoPageSize={true}
-                    enableCellTextSelection={true}
                     suppressCellFocus={true}
                 />
             </div>

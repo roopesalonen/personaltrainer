@@ -52,7 +52,9 @@ export default function TrainingList() {
         { field: 'customerName', headerName: 'Customer', filter: true, flex: 1 },
         {
             cellRenderer: params => (
-                <Button variant="outlined" size="small" color="error" onClick={() => deleteTraining(params.data.id)}>Delete</Button>
+                <div style={{ display: 'flex', height: '100%', alignItems: 'center', gap: '10px' }}>
+                    <Button variant="outlined" size="small" color="error" onClick={() => deleteTraining(params.data.id)}>Delete</Button>
+                </div>
             ),
             headerName: 'Actions',
             sortable: false,
@@ -68,7 +70,6 @@ export default function TrainingList() {
                     columnDefs={columnDefs}
                     pagination={true}
                     paginationAutoPageSize={true}
-                    enableCellTextSelection={true}
                     suppressCellFocus={true}
                 />
             </div>

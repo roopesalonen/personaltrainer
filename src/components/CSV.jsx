@@ -12,7 +12,10 @@ export default function CSVExport({ customers }) {
     }))
 
     return (
-        <CSVLink data={csvData} filename={"customerdata.csv"}>
+        <CSVLink
+            data={csvData}
+            filename={"customerdata.csv"}
+            style={{ textDecoration: 'none', color: 'inherit' }}>
             Export customer data
         </CSVLink>
     )
