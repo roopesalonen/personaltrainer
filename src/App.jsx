@@ -3,6 +3,7 @@ import { Container, CssBaseline, AppBar, Toolbar, Typography, Tabs, Tab, Box } f
 import CustomerList from './components/CustomerList';
 import TrainingList from './components/TrainingList';
 import Calendar from './components/Calendar'
+import Statistics from './components/Statistics';
 
 export default function App() {
   const [value, setValue] = React.useState("customers");
@@ -27,10 +28,12 @@ export default function App() {
         <Tab value="customers" label="Customers" />
         <Tab value="trainings" label="Trainings" />
         <Tab value="calendar" label="Calendar" />
+        <Tab value="statistics" label="Statistics" />
       </Tabs>
       {value === "customers" && <CustomerList />}
       {value === "trainings" && <TrainingList />}
       {value === "calendar" && <Calendar />}
+      {value === "statistics" && <Statistics />}
     </Container>
   )
 }
