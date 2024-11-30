@@ -30,9 +30,9 @@ export default function TrainingCalendar() {
         setTrainings(training);
 
         const eventsArray = training.map((training) => ({
-            title: `${training.activity} (${training.customerName})`,
+            title: `${training.activity} / ${training.customerName}`,
             start: new Date(training.date),
-            end: dayjs(training.date).add(training.duration).toDate(),
+            end: dayjs(training.date).add(training.duration, 'minute').toDate(),
         }));
         setEvents(eventsArray);
     };
@@ -43,6 +43,12 @@ export default function TrainingCalendar() {
                 localizer={localizer}
                 events={events}
                 style={{ height: 550 }}
+                eventPropGetter={() => ({
+                    style: {
+                        display: 'block',
+                        lineHeight: '1'
+                    },
+                })}
             />
         </div>
     )
