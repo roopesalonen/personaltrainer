@@ -1,15 +1,7 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box'
+import { Container, CssBaseline, AppBar, Toolbar, Typography, Tabs, Tab, Box } from '@mui/material';
 import CustomerList from './components/CustomerList';
 import TrainingList from './components/TrainingList';
-
 
 export default function App() {
   const [value, setValue] = React.useState("customers");
