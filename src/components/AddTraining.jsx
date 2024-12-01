@@ -68,14 +68,13 @@ export default function AddTraining(props) {
                         fullWidth
                     />
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DateTimePicker
+                    <DateTimePicker
                             label="Date and time"
                             value={training.date}
                             ampm={false}
+                            format="DD.MM.YYYY HH.mm"
                             onChange={handleDateChange}
-                            slots={{
-                                textField: (props) => <TextField {...props} fullWidth margin="dense" />,
-                            }}
+                            sx={{ marginTop: 3 }}
                         />
                     </LocalizationProvider>
                 </DialogContent>
