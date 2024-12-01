@@ -32,7 +32,7 @@ export default function CustomerList() {
             },
             body: JSON.stringify(customer)
         })
-            .then(fetchCustomers())
+            .then(response => fetchCustomers())
             .then(() => {
                 setSnackbarAdd(true);
             })
